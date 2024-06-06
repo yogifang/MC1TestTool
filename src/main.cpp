@@ -7,7 +7,7 @@
 
 #define ARDUINO_LOOP_STACK_SIZE (16 * 1024)
 #define CAN0_INT 4 // Set INT to pin 4
-
+#define RELAY 15
 byte byData = 0;
 
 File file;
@@ -20,6 +20,7 @@ unsigned char rxBuf[16];
 char msgString[128];
 String *arr = new String[9];
 bool bWaitAck = false;
+bool bSendDone = false;
 
 unsigned int wCurrentID = 0;
 byte byCurrentLen = 0;
@@ -67,6 +68,8 @@ void setup()
 {
   Serial.begin(115200);
   pinMode(CAN0_INT, INPUT);
+  pinMode(RELAY, OUTPUT);
+  digitalWrite(RELAY, LOW);
   // delay(1000);
   Serial.println("GM MC1 2024");
   if (!LittleFS.begin())
@@ -85,6 +88,7 @@ void setup()
 
 void loop()
 {
+  // digitalWrite(RELAY, digitalRead(RELAY) == HIGH ? LOW : HIGH);
   if (Serial.available() > 0)
   {
     byData = Serial.read();
@@ -93,25 +97,35 @@ void loop()
     {
       file.close();
       file = LittleFS.open("/canblue.txt", "r");
+      bSendDone = false;
     }
     if (byData == 103)
     {
       file.close();
       file = LittleFS.open("/cangreen.txt", "r");
+      bSendDone = false;
     }
     if (byData == 114)
     {
       file.close();
       file = LittleFS.open("/canred.txt", "r");
+      bSendDone = false;
+    }
+    if(byData == 112){  // "p"
+      digitalWrite(RELAY, HIGH);
+    }
+    if(byData == 120){  // "x"
+      digitalWrite(RELAY, LOW);
     }
   }
 
-  if(file.available() == 0){
-    Serial.print("=") ;
+  if (file.available() == 0)
+  {
+    //  Serial.print("=") ;
   }
   while (file.available())
   {
-  
+
     str = file.readStringUntil(0x0a);
     if (str.indexOf("Send") != -1 && str.indexOf("Success") != -1)
     {
@@ -143,7 +157,7 @@ void loop()
           // Serial.println("Wait for Acknowledge");
           Serial.print("?");
         }
-        // delay(1); // send data per 100ms
+        delay(10); // send data per 100ms
       }
     }
     if (bWaitAck == true)
@@ -152,38 +166,41 @@ void loop()
       { // If CAN0_INT pin is low, read receive buffer
 
         CAN0.readMsgBuf(&rxId, &len, rxBuf); // Read data: len = data length, buf = data byte(s)
-        bWaitAck = false;
-        /*
+                                             // bWaitAck = false;
 
-                if ((rxId & 0x80000000) == 0x80000000) // Determine if ID is standard (11 bits) or extended (29 bits)
-                  sprintf(msgString, "Extended ID: 0x%.8lX  DLC: %1d  Data:", (rxId & 0x1FFFFFFF), len);
-                else
-                  sprintf(msgString, "Standard ID: 0x%.3lX       DLC: %1d  Data:", rxId, len);
+        if ((rxId & 0x80000000) == 0x80000000) // Determine if ID is standard (11 bits) or extended (29 bits)
+          sprintf(msgString, "Extended ID: 0x%.8lX  DLC: %1d  Data:", (rxId & 0x1FFFFFFF), len);
+        else
+          sprintf(msgString, "Standard ID: 0x%.3lX       DLC: %1d  Data:", rxId, len);
 
-                //  Serial.print(msgString);
+        //  Serial.print(msgString);
 
-                if ((rxId & 0x40000000) == 0x40000000)
-                { // Determine if message is a remote request frame.
-                  sprintf(msgString, " REMOTE REQUEST FRAME");
-                  Serial.print(msgString);
-                }
-                else
-                {
-                  for (byte i = 0; i < len; i++)
-                  {
-                    sprintf(msgString, " 0x%.2X", rxBuf[i]);
-                    //  Serial.print(msgString);
-                    Serial.print("!");
-                  }
-                  if (rxId == 0x2cc)
-                  {
-                    bWaitAck = false;
-                  }
-                }
+        if ((rxId & 0x40000000) == 0x40000000)
+        { // Determine if message is a remote request frame.
+          sprintf(msgString, " REMOTE REQUEST FRAME");
+          Serial.print(msgString);
+        }
+        else
+        {
+          for (byte i = 0; i < len; i++)
+          {
+            // sprintf(msgString, " 0x%.2X", rxBuf[i]);
+            //  Serial.print(msgString);
+            Serial.print("!");
+          }
+          if (rxId == 0x2cc)
+          {
+            bWaitAck = false;
+          }
+        }
 
-                Serial.println();*/
+       // Serial.println();
       }
     }
   }
-  // file.close();
+  file.close();
+  if(bSendDone == false){
+    bSendDone = true;
+    Serial.println("Done");
+  }
 }

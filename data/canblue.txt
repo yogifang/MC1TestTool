@@ -9,6 +9,7 @@ Index	Direction	Time Mark	Status	Name	ID	Format	Type	DLC	Data
 7	Send	19:49:44.487	Success		0x000003B0	Data	Standard	0x08	00 00 00 00 00 00 00 00 	
 8	Send	19:49:44.487	Success		0x0000046A	Data	Standard	0x08	00 00 00 00 21 40 08 80 	
 9	Send	19:49:44.487	Success		0x000000C9	Data	Standard	0x08	12 C0 00 00 00 00 00 00 	
+10	Receive	19:49:44.489			0x000002CC	Data	Standard	0x03	07 FF 59 	
 11	Send	19:49:44.599	Success		0x0000017D	Data	Standard	0x08	00 00 00 00 00 00 00 00 	
 12	Send	19:49:44.599	Success		0x00000194	Data	Standard	0x08	00 00 00 01 00 00 00 00 	
 13	Send	19:49:44.599	Success		0x00000204	Data	Standard	0x08	00 20 00 00 00 00 00 00 	
@@ -18,6 +19,7 @@ Index	Direction	Time Mark	Status	Name	ID	Format	Type	DLC	Data
 17	Send	19:49:44.599	Success		0x000003B0	Data	Standard	0x08	02 00 00 FF 00 00 00 00 	
 18	Send	19:49:44.599	Success		0x0000046A	Data	Standard	0x08	00 00 00 00 21 40 08 80 	
 19	Send	19:49:44.599	Success		0x000000C9	Data	Standard	0x08	13 24 00 00 00 00 00 00 	
+20	Receive	19:49:44.601			0x000002CC	Data	Standard	0x03	07 FF 5A 	
 21	Send	19:49:44.695	Success		0x0000017D	Data	Standard	0x08	00 00 00 00 00 00 00 00 	
 22	Send	19:49:44.695	Success		0x00000194	Data	Standard	0x08	00 00 00 01 00 00 00 00 	
 23	Send	19:49:44.695	Success		0x00000204	Data	Standard	0x08	00 20 00 00 00 00 00 00 	
@@ -27,6 +29,7 @@ Index	Direction	Time Mark	Status	Name	ID	Format	Type	DLC	Data
 27	Send	19:49:44.695	Success		0x000003B0	Data	Standard	0x08	02 00 00 FF 00 00 00 00 	
 28	Send	19:49:44.696	Success		0x0000046A	Data	Standard	0x08	00 00 00 00 21 40 08 80 	
 29	Send	19:49:44.696	Success		0x000000C9	Data	Standard	0x08	0E 10 00 00 00 00 00 00 	
+30	Receive	19:49:44.697			0x000002CC	Data	Standard	0x03	07 FF 5B 	
 31	Send	19:49:44.805	Success		0x0000017D	Data	Standard	0x08	00 00 00 00 00 00 00 00 	
 32	Send	19:49:44.805	Success		0x00000194	Data	Standard	0x08	00 00 00 01 00 00 00 00 	
 33	Send	19:49:44.805	Success		0x00000204	Data	Standard	0x08	00 20 00 00 00 00 00 00 	
@@ -36,7 +39,9 @@ Index	Direction	Time Mark	Status	Name	ID	Format	Type	DLC	Data
 37	Send	19:49:44.807	Success		0x000003B0	Data	Standard	0x08	02 00 00 FF 00 00 00 00 	
 38	Send	19:49:44.807	Success		0x0000046A	Data	Standard	0x08	00 00 00 00 21 40 08 80 	
 39	Send	19:49:44.807	Success		0x000000C9	Data	Standard	0x08	0E 74 00 00 00 00 00 00 	
+40	Receive	19:49:44.808			0x000002CC	Data	Standard	0x03	07 FF 5C 	
 41	Send	19:49:44.808	Success		0x0000017D	Data	Standard	0x08	00 00 00 00 00 00 00 00 	
+42	Receive	19:49:44.810			0x000002CC	Data	Standard	0x03	07 FF 5D 	
 43	Send	19:49:44.902	Success		0x00000194	Data	Standard	0x08	00 00 00 01 00 00 00 00 	
 44	Send	19:49:44.902	Success		0x00000204	Data	Standard	0x08	00 20 00 00 00 00 00 00 	
 45	Send	19:49:44.902	Success		0x00000348	Data	Standard	0x08	00 00 00 00 00 00 00 00 	
@@ -45,6 +50,7 @@ Index	Direction	Time Mark	Status	Name	ID	Format	Type	DLC	Data
 48	Send	19:49:44.902	Success		0x000003B0	Data	Standard	0x08	02 00 00 FF 00 00 00 00 	
 49	Send	19:49:44.903	Success		0x0000046A	Data	Standard	0x08	00 00 00 00 21 40 08 80 	
 50	Send	19:49:44.903	Success		0x000000C9	Data	Standard	0x08	0E D8 00 00 00 00 00 00 	
+51	Receive	19:49:44.905			0x000002CC	Data	Standard	0x03	07 FF 5E 	
 52	Send	19:49:44.998	Success		0x0000017D	Data	Standard	0x08	00 00 00 00 00 00 00 00 	
 53	Send	19:49:44.998	Success		0x00000194	Data	Standard	0x08	00 00 00 01 00 00 00 00 	
 54	Send	19:49:44.998	Success		0x00000204	Data	Standard	0x08	00 20 00 00 00 00 00 00 	
@@ -56,6 +62,7 @@ Index	Direction	Time Mark	Status	Name	ID	Format	Type	DLC	Data
 60	Send	19:49:44.998	Success		0x000000C9	Data	Standard	0x08	0F 3C 00 00 00 00 00 00 	
 61	Send	19:49:44.999	Success		0x0000017D	Data	Standard	0x08	00 00 00 00 00 00 00 00 	
 62	Send	19:49:44.999	Success		0x00000194	Data	Standard	0x08	00 00 00 01 00 00 00 00 	
+63	Receive	19:49:45.001			0x000002CC	Data	Standard	0x03	07 FF 5F 	
 64	Send	19:49:45.108	Success		0x00000204	Data	Standard	0x08	00 20 00 00 00 00 00 00 	
 65	Send	19:49:45.108	Success		0x00000348	Data	Standard	0x08	00 00 00 00 00 00 00 00 	
 66	Send	19:49:45.108	Success		0x00000353	Data	Standard	0x08	00 00 00 00 00 00 00 00 	
@@ -63,6 +70,8 @@ Index	Direction	Time Mark	Status	Name	ID	Format	Type	DLC	Data
 68	Send	19:49:45.109	Success		0x000003B0	Data	Standard	0x08	02 00 00 FF 00 00 00 00 	
 69	Send	19:49:45.109	Success		0x0000046A	Data	Standard	0x08	00 00 00 00 21 40 08 80 	
 70	Send	19:49:45.110	Success		0x000000C9	Data	Standard	0x08	0F A0 00 00 00 00 00 00 	
+71	Receive	19:49:45.112			0x000002CC	Data	Standard	0x03	07 FF 60 	
+72	Receive	19:49:45.112			0x000002CC	Data	Standard	0x03	07 FF 61 	
 73	Send	19:49:45.202	Success		0x0000017D	Data	Standard	0x08	00 00 00 00 00 00 00 00 	
 74	Send	19:49:45.202	Success		0x00000194	Data	Standard	0x08	00 00 00 01 00 00 00 00 	
 75	Send	19:49:45.202	Success		0x00000204	Data	Standard	0x08	00 20 00 00 00 00 00 00 	
@@ -72,6 +81,7 @@ Index	Direction	Time Mark	Status	Name	ID	Format	Type	DLC	Data
 79	Send	19:49:45.203	Success		0x000003B0	Data	Standard	0x08	02 00 00 FF 00 00 00 00 	
 80	Send	19:49:45.203	Success		0x0000046A	Data	Standard	0x08	00 00 00 00 21 40 08 80 	
 81	Send	19:49:45.203	Success		0x000000C9	Data	Standard	0x08	10 04 00 00 00 00 00 00 	
+82	Receive	19:49:45.204			0x000002CC	Data	Standard	0x03	07 FF 62 	
 83	Send	19:49:45.316	Success		0x0000017D	Data	Standard	0x08	00 00 00 00 00 00 00 00 	
 84	Send	19:49:45.316	Success		0x00000194	Data	Standard	0x08	00 00 00 01 00 00 00 00 	
 85	Send	19:49:45.316	Success		0x00000204	Data	Standard	0x08	00 20 00 00 00 00 00 00 	
@@ -91,6 +101,8 @@ Index	Direction	Time Mark	Status	Name	ID	Format	Type	DLC	Data
 99	Send	19:49:45.412	Success		0x000003B0	Data	Standard	0x08	02 00 00 FF 00 00 00 00 	
 100	Send	19:49:45.412	Success		0x0000046A	Data	Standard	0x08	00 00 00 00 21 40 08 80 	
 101	Send	19:49:45.412	Success		0x000000C9	Data	Standard	0x08	10 CC 00 00 00 00 00 00 	
+102	Receive	19:49:45.414			0x000002CC	Data	Standard	0x03	07 FF 64 	
+103	Receive	19:49:45.414			0x000002CC	Data	Standard	0x03	07 FF 00 	
 104	Send	19:49:45.522	Success		0x0000017D	Data	Standard	0x08	00 00 00 00 00 00 00 00 	
 105	Send	19:49:45.522	Success		0x00000194	Data	Standard	0x08	00 00 00 01 00 00 00 00 	
 106	Send	19:49:45.522	Success		0x00000204	Data	Standard	0x08	00 00 00 00 00 00 00 00 	
@@ -99,4 +111,4 @@ Index	Direction	Time Mark	Status	Name	ID	Format	Type	DLC	Data
 109	Send	19:49:45.522	Success		0x000003AA	Data	Standard	0x08	00 01 00 00 00 00 00 00 	
 110	Send	19:49:45.523	Success		0x000003B0	Data	Standard	0x08	00 00 00 00 FF 00 00 00 	
 111	Send	19:49:45.523	Success		0x0000046A	Data	Standard	0x08	00 00 00 00 21 40 08 80 	
-
+112	Receive	19:49:45.524			0x000002CC	Data	Standard	0x03	07 FF 01 	

@@ -116,6 +116,7 @@ void loop()
     }
     if(byData == 120){  // "x"
       digitalWrite(RELAY, LOW);
+      file.close();
     }
   }
 

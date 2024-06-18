@@ -26,6 +26,15 @@ unsigned int wCurrentID = 0;
 byte byCurrentLen = 0;
 byte byCurrentData[8];
 
+void reboot()
+{
+  wdt_disable();
+  wdt_enable(WDTO_15MS);
+  while (1)
+  {
+  }
+}
+
 void splitString(String str, char separator)
 {
 
@@ -111,12 +120,15 @@ void loop()
       file = LittleFS.open("/canred.txt", "r");
       bSendDone = false;
     }
-    if(byData == 112){  // "p"
+    if (byData == 112)
+    { // "p"
       digitalWrite(RELAY, HIGH);
     }
-    if(byData == 120){  // "x"
+    if (byData == 120)
+    { // "x"
       digitalWrite(RELAY, LOW);
       file.close();
+      reboot();
     }
   }
 
@@ -195,12 +207,13 @@ void loop()
           }
         }
 
-       // Serial.println();
+        // Serial.println();
       }
     }
   }
   file.close();
-  if(bSendDone == false){
+  if (bSendDone == false)
+  {
     bSendDone = true;
     Serial.println("Done");
   }
